@@ -10,8 +10,16 @@ namespace Integers
     {
         static void Main(string[] args)
         {
-            int age = 49;
-            Console.WriteLine(age);
+            int i;
+            i = int.MinValue;
+
+            Console.WriteLine($"int Type: {i.GetType()}");
+            Console.WriteLine($"int minimum value: {i}");
+
+            i = int.MaxValue;
+
+            Console.WriteLine($"int maximum value: {i}");
+
             Console.ReadLine();
         }
     }
