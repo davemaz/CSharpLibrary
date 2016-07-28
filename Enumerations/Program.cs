@@ -18,7 +18,7 @@ namespace Enumerations
             
             for(int i = 0; i <= 51; i++)
             {
-                Console.WriteLine(d1.deck[i]);
+                Console.WriteLine(d1.Cards[i]);
             }
 
             Console.ReadLine();
@@ -41,22 +41,22 @@ namespace Enumerations
             }
         }
 
-        public class Deck
+        public class Deck 
         {
-            public List<Card> deck;
+            public List<Card> Cards;
 
             public Deck()
             {
                 Array suits = Enum.GetValues(typeof(Suit));
                 Array faces = Enum.GetValues(typeof(Face));
 
-                deck = new List<Card>();
+                Cards = new List<Card>();
                 
                 foreach(Suit s in suits)
                 {
                     foreach(Face f in faces)
                     {
-                        deck.Add(new Card(f, s));
+                        Cards.Add(new Card(f, s));
                     }
                 }
             }
