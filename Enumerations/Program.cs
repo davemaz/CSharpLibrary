@@ -11,14 +11,26 @@ namespace Enumerations
         static void Main(string[] args)
         {
             Card c1 = new Card(Face.Jack, Suit.Spades);
-            Deck d1 = new Deck();
-
             Console.WriteLine(c1);
+
+            Array suits = Enum.GetValues(typeof(Suit));
+            Array faces = Enum.GetValues(typeof(Face));
+
+            List<Card> Deck = new List<Card>();
+
+            foreach (Suit s in suits)
+            {
+                foreach (Face f in faces)
+                {
+                    Deck.Add(new Card(f, s));
+                }
+            }
+
             Console.WriteLine();
             
             for(int i = 0; i <= 51; i++)
             {
-                Console.WriteLine(d1.Cards[i]);
+                Console.WriteLine(Deck[i]);
             }
 
             Console.ReadLine();
@@ -38,27 +50,6 @@ namespace Enumerations
             public override string ToString()
             {
                 return $"{face} of {suit}";
-            }
-        }
-
-        public class Deck 
-        {
-            public List<Card> Cards;
-
-            public Deck()
-            {
-                Array suits = Enum.GetValues(typeof(Suit));
-                Array faces = Enum.GetValues(typeof(Face));
-
-                Cards = new List<Card>();
-                
-                foreach(Suit s in suits)
-                {
-                    foreach(Face f in faces)
-                    {
-                        Cards.Add(new Card(f, s));
-                    }
-                }
             }
         }
 
