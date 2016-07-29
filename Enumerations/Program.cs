@@ -16,13 +16,13 @@ namespace Enumerations
             Array suits = Enum.GetValues(typeof(Suit));
             Array faces = Enum.GetValues(typeof(Face));
 
-            List<Card> Deck = new List<Card>();
+            List<Card> deck = new List<Card>();
 
             foreach (Suit s in suits)
             {
                 foreach (Face f in faces)
                 {
-                    Deck.Add(new Card(f, s));
+                    deck.Add(new Card(f, s));
                 }
             }
 
@@ -30,7 +30,7 @@ namespace Enumerations
             
             for(int i = 0; i <= 51; i++)
             {
-                Console.WriteLine(Deck[i]);
+                Console.WriteLine(deck[i]);
             }
 
             Console.ReadLine();
